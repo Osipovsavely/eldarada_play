@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
         foodt.text = food.ToString();
         populationt.text = population.ToString();
     }
+    
+    
 
 
 }
