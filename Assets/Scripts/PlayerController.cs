@@ -25,7 +25,12 @@ public class PlayerController : MonoBehaviour
         stonet.text = stone.ToString();
         foodt.text = food.ToString();
         populationt.text = population.ToString();
+        //
+        
     }
+
+
+
     
     
 
