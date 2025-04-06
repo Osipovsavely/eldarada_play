@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int weapon, stone, food, population;
     [SerializeField] int wall_HP = 1000;
     [SerializeField] TMP_Text weapont, stonet, foodt, populationt;
+    [SerializeField] GameObject Button_P1, Button_P2;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +27,9 @@ public class PlayerController : MonoBehaviour
         foodt.text = food.ToString();
         populationt.text = population.ToString();
         //
-        
+        //if (SceneManagement.GetActiveScene().name=="neworld") 
     }
+
 
 
 
