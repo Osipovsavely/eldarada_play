@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Image interfase, buttum_next;
     //[SerializeField] public int weapon, stone, food, population;
     [SerializeField] int wall_HP = 1000;
-    [SerializeField] TMP_Text weapont, stonet, foodt, populationt;
+    [SerializeField] TMP_Text weapont, stonet, foodt, populationt, stept;
     [SerializeField] GameObject Button_P1, Button_P2;
     //public int weapon, stone, food, population;
 
@@ -30,16 +30,12 @@ public class PlayerController : MonoBehaviour
         stonet.text = Playerdata.stone.ToString();
         foodt.text = Playerdata.food.ToString();
         populationt.text = Playerdata.population.ToString();
-        
+        stept.text = Playerdata.step.ToString();
+        //stoimost_stone.text = Playerdata.up_stoimost_stone.ToString();
+        //stoimost_people.text = Playerdata.up_stoimost_people.ToString();
+        //stoimost_food.text = Playerdata.up_stoimost_food.ToString();
         //
         //if (SceneManagement.GetActiveScene().name=="neworld") 
     }
-
-
-
-
-    
-    
-
 
 }

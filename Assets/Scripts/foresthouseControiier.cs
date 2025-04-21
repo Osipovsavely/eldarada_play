@@ -9,13 +9,21 @@ public class foresthouseControiier : MonoBehaviour
 {
     [SerializeField] TMP_Text res;
     [SerializeField] TMP_Text in_day_text;
+    [SerializeField] TMP_Text stoimost_stone, stoimost_food, stoimost_people;
     // Start is called before the first frame update
     public void OnMouseDown() 
     { 
         //Playerdata.population += 1;
         //Playerdata.res_contr = 1;
         res.text = "люди";
-        in_day_text.text = Playerdata.population_day.ToString();;
+        Playerdata.up_stoimost_stone = 20;
+        Playerdata.up_stoimost_people = 20;
+        Playerdata.up_stoimost_food = 40;
+        stoimost_stone.text = Playerdata.up_stoimost_stone.ToString();
+        stoimost_people.text = Playerdata.up_stoimost_people.ToString();
+        stoimost_food.text = Playerdata.up_stoimost_food.ToString();
+
+        in_day_text.text = Playerdata.population_day.ToString();
 
     } 
 }
