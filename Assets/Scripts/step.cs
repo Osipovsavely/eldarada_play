@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class s : MonoBehaviour
 {
-    [SerializeField] int steps = 0;
+    //[SerializeField] int steps = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,13 @@ public class s : MonoBehaviour
     }
     public void step()
     {
-        steps =+ 1;
+        Playerdata.step =+ 1;
+        Playerdata.weapon =+ Playerdata.weapon_day;
+        Playerdata.stone =+ Playerdata.stone_day;
+        Playerdata.food =+ Playerdata.food_day;
+        Playerdata.population =+ Playerdata.population_day;
+        
         //food =+ food_day
+
     }
 }
