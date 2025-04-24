@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class s : MonoBehaviour
 {
-    [SerializeField]int step_max = 1;
+    [SerializeField]int step_max = 100;
     [SerializeField] GameObject lose_menu, win_menu;
     //[SerializeField] int steps = 0;
 
@@ -26,18 +26,22 @@ public class s : MonoBehaviour
         Playerdata.stone += Playerdata.stone_day;
         Playerdata.food += Playerdata.food_day;
         Playerdata.population += Playerdata.population_day;
+
+        if (Playerdata.step > step_max) 
+        {
+            if ((Playerdata.weapon < 1000) || (Playerdata.food < 0))
+            {
+                lose_menu.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else
+            {
+                win_menu.SetActive(true);
+                Time.timeScale = 0;
+            }
+        }
+         
         
-        //food =+ food_day
-        if ((Playerdata.step > step_max) && (Playerdata.weapon < 1000))
-        {
-            lose_menu.SetActive(true);
-            Time.timeScale = 0;
-        }
-        else
-        {
-            win_menu.SetActive(true);
-            Time.timeScale = 0;
-        }
 
     }
 }

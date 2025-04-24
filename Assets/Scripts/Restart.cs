@@ -9,5 +9,6 @@ public class Restart : MonoBehaviour
     public void Restart_()
     {
         SceneManager.LoadScene(1);
+        Playerdata.step = 1;
     }
 }
