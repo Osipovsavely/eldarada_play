@@ -26,6 +26,7 @@ public class s : MonoBehaviour
         Playerdata.stone += Playerdata.stone_day;
         Playerdata.food += Playerdata.food_day;
         Playerdata.population += Playerdata.population_day;
+        //Playerdata.food_day -= Playerdata.population
 
         if (Playerdata.step > step_max) 
         {

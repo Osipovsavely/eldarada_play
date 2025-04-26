@@ -12,4 +12,7 @@ public static class Playerdata
     public static float population, population_day;//население
     public static int up_stoimost_stone, up_stoimost_people, up_stoimost_food;
     //public static int minus_food
+
+    //Для стены
+    public static int weapon_HP, people_HP, stone_HP;
 }
