@@ -17,10 +17,10 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Playerdata.weapon = 200f;
-        Playerdata.stone = 200f;
-        Playerdata.food = 10000f;
-        Playerdata.population = 500f;
+        //Playerdata.weapon = 200f;
+        //Playerdata.stone = 200f;
+        //Playerdata.food = 10000f;
+        //Playerdata.population = 500f;
     }
 
     // Update is called once per frame
