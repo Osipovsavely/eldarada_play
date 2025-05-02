@@ -6,16 +6,20 @@ using TMPro;
 
 public class Portals : MonoBehaviour
 {
+    float proverka;
     [SerializeField] TMP_Text stoneHP_text, weaponHP_text, peopleHP_text;
     public void portal_in_city()
     {
         SceneManager.LoadScene(0);
         ActiveWall();
+       // if ()
         
     }
+
     public void portal_in_neworld()
     {
         SceneManager.LoadScene(1);
+        proverka = Playerdata.step;
     }
     void ActiveWall()
     {

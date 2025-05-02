@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Playerdata
 {
-    public static int res_contr, rescon;
+    public static int res_contr, rescon, proverka;
     public static float step;//ход
     public static float stone_day;//камень
     public static float weapon_day;//оружие

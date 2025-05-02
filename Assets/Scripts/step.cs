@@ -6,7 +6,7 @@ using TMPro;
 public class s : MonoBehaviour
 {
     [SerializeField]int step_max = 100;
-    [SerializeField] GameObject lose_menu, win_menu, pechat_stone, pechat_weapon, pechat_people;
+    [SerializeField] GameObject lose_menu, win_menu, pechat_stone, pechat_weapon, pechat_people, event_object_2;
     [SerializeField] TMP_Text stoneHP_text, weaponHP_text, peopleHP_text;
     //[SerializeField] int steps = 0;
 
@@ -31,6 +31,7 @@ public class s : MonoBehaviour
         Playerdata.food += Playerdata.food_day - Playerdata.people_HP;
         Playerdata.population += Playerdata.population_day;
         //Playerdata.food_day -= Playerdata.population
+        //if (SceneManager == 0)
         pechat_stone.SetActive(false);
         pechat_weapon.SetActive(false);
         pechat_people.SetActive(false);
@@ -55,8 +56,10 @@ public class s : MonoBehaviour
                 Time.timeScale = 0;
             }
         }
-         
-        
-
+        if (Playerdata.step == 1)
+        {
+            event_object_2.SetActive(true);
+        }
     }
+
 }

@@ -9,6 +9,7 @@ public class farmController : MonoBehaviour
     [SerializeField] TMP_Text res;
     [SerializeField] TMP_Text in_day_text;
     [SerializeField] TMP_Text stoimost_stone, stoimost_food, stoimost_people;
+    int real_people_in_day = (Playerdata.up_stoimost_food - Playerdata.people_HP);
     // Start is called before the first frame update
     public void OnMouseDown() 
     { 
@@ -21,9 +22,9 @@ public class farmController : MonoBehaviour
         Playerdata.up_stoimost_food = 60;
         stoimost_stone.text = Playerdata.up_stoimost_stone.ToString();
         stoimost_people.text = Playerdata.up_stoimost_people.ToString();
-        stoimost_food.text = Playerdata.up_stoimost_food.ToString();
+        in_day_text.text = real_people_in_day.ToString();
 
-        in_day_text.text = Playerdata.food_day.ToString();
+        stoimost_food.text = Playerdata.food_day.ToString();
 
     } 
 

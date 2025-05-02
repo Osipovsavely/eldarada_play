@@ -20,6 +20,18 @@ public class Wall_logic : MonoBehaviour
         stoneHP_text.text = Playerdata.stone_HP + "/" + Playerdata.stone_HP_max;
         weaponHP_text.text = Playerdata.weapon_HP + "/" + Playerdata.weapon_HP_max;
         peopleHP_text.text = Playerdata.people_HP + "/" + Playerdata.people_HP_max;
+        if (Playerdata.pechat_people_full == 0)
+        {
+            pechat_people.SetActive(false);
+        }
+        if (Playerdata.pechat_weapon_full == 0)
+        {
+            pechat_weapon.SetActive(false);
+        }
+        if (Playerdata.pechat_stone_full == 0)
+        {
+            pechat_stone.SetActive(false);
+        }
     }
 
     public void Wall_UP_stone()
