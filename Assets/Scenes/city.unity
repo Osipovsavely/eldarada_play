@@ -42965,6 +42965,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelwall: {fileID: 1695517208}
+  stoneHP_text: {fileID: 123232338}
+  weaponHP_text: {fileID: 1216517256}
+  peopleHP_text: {fileID: 1586579354}
 --- !u!43 &1385413739
 Mesh:
   m_ObjectHideFlags: 0
@@ -44871,6 +44874,7 @@ MonoBehaviour:
   pechat_stone: {fileID: 190675376}
   pechat_weapon: {fileID: 1866658797}
   pechat_people: {fileID: 1730681330}
+  event_object_2: {fileID: 0}
   stoneHP_text: {fileID: 1586579354}
   weaponHP_text: {fileID: 1216517256}
   peopleHP_text: {fileID: 123232338}

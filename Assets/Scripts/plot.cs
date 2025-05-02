@@ -20,15 +20,15 @@ public class plot : MonoBehaviour
     }
 
 
-    public void event_2_say_tue()
+    public void event_2_no()
     {
         event_object_2.SetActive(false);
     }
-    public void event_2_say_false()
+    public void event_2_yes()
     {
         event_object_2.SetActive(false);
     }
-    public void event_2_no_say()
+    public void event_2_fiftififti()
     {
         event_object_2.SetActive(false);
     }

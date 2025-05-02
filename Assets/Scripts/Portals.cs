@@ -11,7 +11,7 @@ public class Portals : MonoBehaviour
     public void portal_in_city()
     {
         SceneManager.LoadScene(0);
-        ActiveWall();
+        //ActiveWall();
        // if ()
         
     }
