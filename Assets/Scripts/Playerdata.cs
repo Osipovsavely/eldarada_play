@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Playerdata
 {
-    public static int res_contr, rescon, proverka;
+    public static int res_contr, rescon, proverka, main_person, build_x;
     public static float step;//ход
     public static float stone_day;//камень
     public static float weapon_day;//оружие
@@ -27,4 +27,9 @@ public static class Playerdata
     public static int people_HP_max = 3000;
     public static int weapon_HP_max = 2000;
     public static int pechat_people_full, pechat_stone_full, pechat_weapon_full;
+
+    public static bool people_portal = false;
+    public static bool stone_portal = false;
+    public static bool weapon_portal = false;
+    public static bool food_portal = false;
 }

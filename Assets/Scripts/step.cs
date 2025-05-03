@@ -6,7 +6,7 @@ using TMPro;
 public class s : MonoBehaviour
 {
     [SerializeField]int step_max = 100;
-    [SerializeField] GameObject lose_menu, win_menu, pechat_stone, pechat_weapon, pechat_people, event_object_2;
+    [SerializeField] GameObject lose_menu, win_menu, pechat_stone, pechat_weapon, pechat_people, event_object_2, event_object_3, event_3_alvaro, event_3_hose, event_object_4;
     [SerializeField] TMP_Text stoneHP_text, weaponHP_text, peopleHP_text;
     //[SerializeField] int steps = 0;
 
@@ -59,6 +59,43 @@ public class s : MonoBehaviour
         if (Playerdata.step == 1)
         {
             event_object_2.SetActive(true);
+        }
+        if (Playerdata.step == 2)
+        {
+            event_object_3.SetActive(true);
+            if (Playerdata.main_person == 1)
+            {
+                event_3_alvaro.SetActive(true);
+            }
+            if (Playerdata.main_person == 2)
+            {
+                event_3_hose.SetActive(true);
+            }
+        }
+        if (Playerdata.step == 3)
+        {
+            event_object_4.SetActive(true);
+            
+        }
+        if (Playerdata.step >= (3+(1*Playerdata.build_x)))
+        {
+            Playerdata.stone_portal = true;
+            activate_food();
+        }
+        if (Playerdata.step >= (3+(2*Playerdata.build_x)))
+        {
+            Playerdata.food_portal = true;
+            activate_stone();
+        }
+        if (Playerdata.step >= (3+(3*Playerdata.build_x)))
+        {
+            Playerdata.people_portal = true;
+            activate_people();
+        }
+        if (Playerdata.step >= (3+(4*Playerdata.build_x)))
+        {
+            Playerdata.weapon_portal = true;
+            activate_weapon();
         }
     }
 

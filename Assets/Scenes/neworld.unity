@@ -2330,11 +2330,11 @@ Transform:
   m_GameObject: {fileID: 63304777}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 67.39188, y: -2.9699087, z: -220.41513}
+  m_LocalPosition: {x: 457, y: 0, z: 257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094924895}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124982231
 GameObject:
@@ -4248,6 +4248,10 @@ PrefabInstance:
     - target: {fileID: 1070529732404798200, guid: 4060e943175593e4ab10eea3d6fe5074, type: 3}
       propertyPath: m_Name
       value: House 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070529732404798200, guid: 4060e943175593e4ab10eea3d6fe5074, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1148690933666166773, guid: 4060e943175593e4ab10eea3d6fe5074, type: 3}
       propertyPath: m_Mesh
@@ -6536,6 +6540,10 @@ MonoBehaviour:
   pechat_weapon: {fileID: 0}
   pechat_people: {fileID: 0}
   event_object_2: {fileID: 498287005}
+  event_object_3: {fileID: 0}
+  event_3_alvaro: {fileID: 0}
+  event_3_hose: {fileID: 0}
+  event_object_4: {fileID: 0}
   stoneHP_text: {fileID: 0}
   weaponHP_text: {fileID: 0}
   peopleHP_text: {fileID: 0}
@@ -9602,7 +9610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &725454501
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13295,6 +13303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: forest house
       objectReference: {fileID: 0}
+    - target: {fileID: 2338787105725115658, guid: 8bcd3f2a60ac5f04bb980bde66cf3251, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4445340232584938978, guid: 8bcd3f2a60ac5f04bb980bde66cf3251, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -15693,6 +15705,7 @@ GameObject:
   - component: {fileID: 1692924327}
   - component: {fileID: 1692924326}
   - component: {fileID: 1692924325}
+  - component: {fileID: 1692924328}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -15750,6 +15763,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1692924328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692924324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f764012f0ae1a34291cdf30b186ef49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food_b: {fileID: 725454500}
+  stone_b: {fileID: 2094924889}
+  weapon_b: {fileID: 1710369093}
+  people_b: {fileID: 1023825128}
 --- !u!1 &1710369093 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1070529732404798200, guid: 4060e943175593e4ab10eea3d6fe5074, type: 3}
@@ -17469,7 +17498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1958044160
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18636,7 +18665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &2094924890
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21428,7 +21457,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 124982232}
-  - {fileID: 63304783}
   - {fileID: 600175708}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21704,6 +21732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: first_event_image
       objectReference: {fileID: 0}
+    - target: {fileID: 1200233740317232742, guid: 90b4e39ced5596945b0a3005495bf4f6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8663752865245520919, guid: 90b4e39ced5596945b0a3005495bf4f6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -21802,4 +21834,5 @@ SceneRoots:
   - {fileID: 329036334}
   - {fileID: 725454505}
   - {fileID: 1347367129}
+  - {fileID: 63304783}
   - {fileID: 2094924895}
