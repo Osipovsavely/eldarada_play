@@ -12,7 +12,7 @@ public class wallController : MonoBehaviour
     
     public void OnMouseDown() 
     {
-        if (wallcontr == 0)
+        if ((wallcontr == 0) && (Playerdata.step >= 20))
         {
             panelwall.SetActive(true);
             wallcontr = 1;

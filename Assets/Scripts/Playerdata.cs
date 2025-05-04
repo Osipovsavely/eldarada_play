@@ -4,19 +4,20 @@ using UnityEngine;
 
 public static class Playerdata
 {
-    public static int res_contr, rescon, proverka, main_person, build_x;
-    public static float step;//ход
-    public static float stone_day;//камень
-    public static float weapon_day;//оружие
-    public static float food_day;//еда
-    public static float population_day;//население
+    public static int res_contr, rescon, proverka, main_person, attak;
+    public static int build_x = 1;
+    public static int step;//ход
+    public static int stone_day;//камень
+    public static int weapon_day;//оружие
+    public static int food_day;//еда
+    public static int population_day;//население
     public static int up_stoimost_stone, up_stoimost_people, up_stoimost_food;
     //public static int minus_food
 
-    public static float stone = 200;
-    public static float weapon = 200;
-    public static float food = 10000;
-    public static float population = 500;
+    public static int stone = 300;
+    public static int weapon = 200;
+    public static int food = 10000;
+    public static int population = 600;
 
     //Для стены
     
@@ -32,4 +33,9 @@ public static class Playerdata
     public static bool stone_portal = false;
     public static bool weapon_portal = false;
     public static bool food_portal = false;
+
+    public static bool event_4_controll = false;
+    public static bool event_5_controll = false;
+    public static bool event_6_controll = false;
+
 }

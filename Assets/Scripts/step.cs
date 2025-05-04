@@ -6,25 +6,36 @@ using TMPro;
 public class s : MonoBehaviour
 {
     [SerializeField]int step_max = 100;
-    [SerializeField] GameObject lose_menu, win_menu, pechat_stone, pechat_weapon, pechat_people, event_object_2, event_object_3, event_3_alvaro, event_3_hose, event_object_4;
-    [SerializeField] TMP_Text stoneHP_text, weaponHP_text, peopleHP_text;
-    //[SerializeField] int steps = 0;
+    [SerializeField] GameObject lose_menu, win_menu, pechat_stone, pechat_weapon, pechat_people, event_object_1, event_object_2, event_object_3, event_3_alvaro, event_3_hose, event_object_4, event_object_5, event_object_6, portal;
+    [SerializeField] GameObject not_plot_event_1, not_plot_event_2, not_plot_event_3, massage_;
+    [SerializeField] TMP_Text stoneHP_text, weaponHP_text, peopleHP_text, massage_text, massage_text_answe;
+    int random_controll_batlle;
+    int random_controll_events;
 
-    // Start is called before the first frame update
+    bool massage_controll_stone = true;
+    bool massage_controll_people = true;
+    bool massage_controll_weapon = true;
+    bool massage_controll_food = true;
+
+
+
+
     void Start()
     {
-        //Playerdata.stone_HP = 2000;
-        //Playerdata.weapon_HP = 1000;
-        //Playerdata.people_HP = 1000;
+        if (Playerdata.step >= 3)
+        {
+            portal.SetActive(true);
+        }
     }
+    
 
-    // Update is called once per frame
     void Update()
     {
         
     }
     public void step()
     {
+
         Playerdata.step += 1;
         Playerdata.weapon += Playerdata.weapon_day;
         Playerdata.stone += Playerdata.stone_day;
@@ -38,6 +49,10 @@ public class s : MonoBehaviour
         stoneHP_text.text = Playerdata.stone_HP + "/" + Playerdata.stone_HP_max;
         weaponHP_text.text = Playerdata.weapon_HP + "/" + Playerdata.weapon_HP_max;
         peopleHP_text.text = Playerdata.people_HP + "/" + Playerdata.people_HP_max;
+
+        Playerdata.stone_HP -= Playerdata.attak;
+        Playerdata.people_HP -= Playerdata.attak;
+        Playerdata.weapon_HP -= Playerdata.attak;
 
         Playerdata.pechat_people_full = 0;
         Playerdata.pechat_weapon_full = 0;
@@ -56,11 +71,18 @@ public class s : MonoBehaviour
                 Time.timeScale = 0;
             }
         }
+
         if (Playerdata.step == 1)
+        {
+            event_object_1.SetActive(true);
+        }
+
+        
+        if (Playerdata.step == 2)
         {
             event_object_2.SetActive(true);
         }
-        if (Playerdata.step == 2)
+        if (Playerdata.step == 3)
         {
             event_object_3.SetActive(true);
             if (Playerdata.main_person == 1)
@@ -72,30 +94,87 @@ public class s : MonoBehaviour
                 event_3_hose.SetActive(true);
             }
         }
-        if (Playerdata.step == 3)
+        if ((Playerdata.step == 4) && (Playerdata.event_4_controll == false))
         {
             event_object_4.SetActive(true);
+            Playerdata.event_4_controll = true;
+        }
+        if ((Playerdata.step == 20) && (Playerdata.event_5_controll == false))
+        {
+            event_object_5.SetActive(true);
+            Playerdata.event_5_controll = true;
             
         }
-        if (Playerdata.step >= (3+(1*Playerdata.build_x)))
+        if ((Playerdata.step == 25) && (Playerdata.event_6_controll == false))
         {
+            event_object_6.SetActive(true);
+            Playerdata.event_6_controll = true;
+            random_controll_events = Playerdata.step;
+        }
+
+        if (Playerdata.step >= (4+(1*Playerdata.build_x)))
+        {
+            if (massage_controll_stone == true)
+            {
+                massage_text.text = "Хорошие новости! Наши рабочие достроили шахту в другом мире! Что бы начать добывать камень перейдите в другой мир, нажмите на шахту и улучшите её.";
+                massage_controll_stone = false;
+                massage_.SetActive(true);
+            }
             Playerdata.stone_portal = true;
-            activate_food();
         }
-        if (Playerdata.step >= (3+(2*Playerdata.build_x)))
+        if (Playerdata.step >= (4+(2*Playerdata.build_x)))
         {
+            if (massage_controll_food == true)
+            {
+                massage_text.text = "Хорошие новости! Наши рабочие достроили ферму в другом мире! Что бы начать добывать еду перейдите в другой мир, нажмите на мельницу и улучшите её.";
+                massage_controll_food = false;
+                massage_.SetActive(true);
+            }
             Playerdata.food_portal = true;
-            activate_stone();
         }
-        if (Playerdata.step >= (3+(3*Playerdata.build_x)))
+        if (Playerdata.step >= (4+(3*Playerdata.build_x)))
         {
+            if (massage_controll_people == true)
+            {
+                massage_text.text = "Хорошие новости! Наши дипломаты установили дипломотические связи с людьми, живущими в паралельном мире! Они согласились поставлять нам людской ресурс, которого нам так не хватало! Что бы увеличить прерост людей улучшите посольство.";
+                massage_controll_people = false;
+                massage_.SetActive(true);
+            }
             Playerdata.people_portal = true;
-            activate_people();
         }
-        if (Playerdata.step >= (3+(4*Playerdata.build_x)))
+        if (Playerdata.step >= (4+(4*Playerdata.build_x)))
         {
+            if (massage_controll_weapon == true)
+            {
+                massage_text.text = "Хорошие новости! Благодаря инвистициям и субсидиям из стран другого мира была построена мастерская! Улучшите её, что бы она начала производить оружие для вас.";
+                massage_text_answe.text = "Судсидии? Инвистиции? Чего?";
+                massage_controll_weapon = false;
+                massage_.SetActive(true);
+            }
             Playerdata.weapon_portal = true;
-            activate_weapon();
+        }
+
+        if ((Playerdata.step >= 30)&&(Playerdata.step+5 >= random_controll_events))
+        {
+            //int random_controll_batlle;
+            int chance = Random.Range(0,31);
+            if (chance == 10)
+            {
+                not_plot_event_1.SetActive(true);
+                random_controll_events = Playerdata.step;
+
+            }
+            if (chance == 20)
+            {
+                not_plot_event_2.SetActive(true);
+                random_controll_events = Playerdata.step;
+
+            }
+            //if (chance == 30)
+            //{
+            //    not_plot_event_3.SetActive(true);
+
+            //}
         }
     }
 

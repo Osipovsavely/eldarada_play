@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class plot : MonoBehaviour
 {
-    [SerializeField] GameObject event_object_1, event_object_2, event_object_3, event_object_4, portal, portal_3D;
+    [SerializeField] GameObject event_object_1, event_object_2, event_object_3, event_object_4, event_object_5, portal, portal_3D, wall_panel;
     //int main_person; //0-игрок, 1 - генерал альваро, 2 - новобранец хосе 
 
     public void event_1_say_tue()
@@ -66,5 +66,12 @@ public class plot : MonoBehaviour
         Playerdata.stone -= 50;
         Playerdata.population -= 100; 
         Playerdata.build_x = 3;
+    }
+
+
+    public void event_5()
+    {
+        event_object_5.SetActive(false);
+        wall_panel.SetActive(true);
     }
 }

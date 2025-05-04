@@ -8,9 +8,11 @@ public class MineController : MonoBehaviour
     [SerializeField] TMP_Text res;
     [SerializeField] TMP_Text in_day_text;
     [SerializeField] TMP_Text stoimost_stone, stoimost_food, stoimost_people;
+    [SerializeField] GameObject panel;
     // Start is called before the first frame update
     public void OnMouseDown() 
     {
+        panel.SetActive(true);
         res.text = "камня";
         Playerdata.rescon = 1;
         Playerdata.up_stoimost_stone = 40;
