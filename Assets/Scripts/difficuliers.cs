@@ -24,7 +24,7 @@ public class difficuliers : MonoBehaviour
     public void event_2()
     {
 
-        event_1_o.SetActive(false);
+        event_2_o.SetActive(false);
         Playerdata.attak += 5;
 
     }

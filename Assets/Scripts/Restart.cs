@@ -8,7 +8,7 @@ public class Restart : MonoBehaviour
 
     public void Restart_()
     {
-        SceneManager.LoadScene(1);
-        Playerdata.step = 1;
+        SceneManager.LoadScene(0);
+        Playerdata.step = 0;
     }
 }
