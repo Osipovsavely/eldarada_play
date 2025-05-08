@@ -10,14 +10,17 @@ public class plot : MonoBehaviour
     public void event_1_say_tue()
     {
         event_object_1.SetActive(false);
+        Playerdata.koncovka = 120;
     }
     public void event_1_say_false()
     {
         event_object_1.SetActive(false);
+        Playerdata.koncovka = 200;
     }
     public void event_1_no_say()
     {
         event_object_1.SetActive(false);
+        Playerdata.kocovka_bool = false;
     }
 
 
