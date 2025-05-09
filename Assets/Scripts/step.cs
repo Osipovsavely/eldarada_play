@@ -2,14 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class s : MonoBehaviour
 {
     [SerializeField]int step_max = 100;
-    [SerializeField] GameObject lose_menu, win_menu, pechat_stone, pechat_weapon, pechat_people, event_object_1, event_object_2, event_object_3, event_3_alvaro, event_3_hose, event_object_4, event_object_5, event_object_6, portal;
+    [SerializeField] GameObject lose_menu, win_menu, pechat_stone, pechat_weapon, pechat_people, event_object_1, event_object_2, event_object_3, event_3_alvaro, event_3_hose, event_3_yoy, event_object_4, event_object_5, event_object_6, portal;
     [SerializeField] GameObject not_plot_event_1, not_plot_event_2, not_plot_event_3, massage_, end_1;
     [SerializeField] TMP_Text stoneHP_text, weaponHP_text, peopleHP_text, massage_text, massage_text_answe;
     int random_controll_batlle;
+    [SerializeField] GameObject feigh_1_5, feigh_2_5, feigh_3_5, feigh_4_5, feigh_5_5;
+    //public Image feigh_1_5, feigh_2_5, feigh_3_5, feigh_4_5, feigh_5_5;
+    float just_weapon_day;
+    float just_food_day;
+    float just_stone_day;
+    float just_people_day;
 
 
     //bool massage_controll_stone = true;
@@ -26,6 +33,46 @@ public class s : MonoBehaviour
         {
             portal.SetActive(true);
         }
+        if (Playerdata.feigh <= 20)
+        {
+            feigh_1_5.SetActive(true);
+        }
+        else
+        {
+            feigh_1_5.SetActive(false);
+        }
+        if ((Playerdata.feigh >= 20) && (Playerdata.feigh < 40))
+        {
+            feigh_2_5.SetActive(true);
+        }
+        else
+        {
+            feigh_2_5.SetActive(false);
+        }
+        if ((Playerdata.feigh >= 40) && (Playerdata.feigh < 60))
+        {
+            feigh_3_5.SetActive(true);
+        }
+        else
+        {
+            feigh_3_5.SetActive(false);
+        }
+        if ((Playerdata.feigh >= 60) && (Playerdata.feigh < 80))
+        {
+            feigh_4_5.SetActive(true);
+        }
+        else
+        {
+            feigh_4_5.SetActive(false);
+        }
+        if ((Playerdata.feigh >= 80) && (Playerdata.feigh <= 100))
+        {
+            feigh_5_5.SetActive(true);
+        }
+        else
+        {
+            feigh_5_5.SetActive(false);
+        }
     }
     
 
@@ -35,17 +82,40 @@ public class s : MonoBehaviour
     }
     public void step()
     {
+       
 
         Playerdata.step += 1;
-        Playerdata.weapon += Playerdata.weapon_day;
-        Playerdata.stone += Playerdata.stone_day;
-        Playerdata.food += Playerdata.food_day - Playerdata.population - (Playerdata.people_HP*2);
-        Playerdata.population += Playerdata.population_day;
+
+        if ((Playerdata.main_person == 1) && (Playerdata.main_person == 2) && (Playerdata.step == 4))
+        {
+            just_food_day = ((Playerdata.food_day - Playerdata.population - (Playerdata.people_HP*2)))*Playerdata.govermentbonus*(1-(Playerdata.feigh));
+            just_weapon_day = Playerdata.weapon_day*Playerdata.govermentbonus*(1-(Playerdata.feigh));
+            just_stone_day = Playerdata.stone_day*Playerdata.govermentbonus*(1-(Playerdata.feigh));
+            just_people_day = Playerdata.population_day*Playerdata.govermentbonus*(1-(Playerdata.feigh));
+        }
+        else
+        {
+            just_food_day = (Playerdata.food_day - Playerdata.population - (Playerdata.people_HP*2))*Playerdata.govermentbonus*Playerdata.feigh;
+            just_weapon_day = Playerdata.weapon_day*Playerdata.govermentbonus*Playerdata.feigh;
+            just_stone_day = Playerdata.stone_day*Playerdata.govermentbonus*Playerdata.feigh;
+            just_people_day = Playerdata.population_day*Playerdata.govermentbonus*Playerdata.feigh;
+        }
+        
+        //float just_weapon_day = Playerdata.weapon_day*Playerdata.govermentbonus;
+        //float just_stone_day = Playerdata.stone_day;
+        //float just_people_day = Playerdata.population_day;
+        
+        Playerdata.stone += Mathf.RoundToInt(just_stone_day);
+        Playerdata.food += Mathf.RoundToInt(just_food_day);
+        Playerdata.population += Mathf.RoundToInt(just_people_day);
+        Playerdata.weapon += Mathf.RoundToInt(just_weapon_day);
+
         //Playerdata.food_day -= Playerdata.population
         //if (SceneManager == 0)
         pechat_stone.SetActive(false);
         pechat_weapon.SetActive(false);
         pechat_people.SetActive(false);
+
         stoneHP_text.text = Playerdata.stone_HP + "/" + Playerdata.stone_HP_max;
         weaponHP_text.text = Playerdata.weapon_HP + "/" + Playerdata.weapon_HP_max;
         peopleHP_text.text = Playerdata.people_HP + "/" + Playerdata.people_HP_max;
@@ -93,6 +163,10 @@ public class s : MonoBehaviour
                 else if (Playerdata.main_person == 2)
                 {
                     event_3_hose.SetActive(true);
+                }
+                else if (Playerdata.main_person == 0)
+                {
+                    event_3_yoy.SetActive(true);
                 }
             }
             else if ((Playerdata.step == 4) && (Playerdata.event_4_controll == false))
@@ -195,6 +269,45 @@ public class s : MonoBehaviour
                 }
             }
         }
+        if (Playerdata.feigh <= 20)
+        {
+            feigh_1_5.SetActive(true);
+        }
+        else
+        {
+            feigh_1_5.SetActive(false);
+        }
+        if ((Playerdata.feigh >= 20) && (Playerdata.feigh < 40))
+        {
+            feigh_2_5.SetActive(true);
+        }
+        else
+        {
+            feigh_2_5.SetActive(false);
+        }
+        if ((Playerdata.feigh >= 40) && (Playerdata.feigh < 60))
+        {
+            feigh_3_5.SetActive(true);
+        }
+        else
+        {
+            feigh_3_5.SetActive(false);
+        }
+        if ((Playerdata.feigh >= 60) && (Playerdata.feigh < 80))
+        {
+            feigh_4_5.SetActive(true);
+        }
+        else
+        {
+            feigh_4_5.SetActive(false);
+        }
+        if ((Playerdata.feigh >= 80) && (Playerdata.feigh < 100))
+        {
+            feigh_5_5.SetActive(true);
+        }
+        else
+        {
+            feigh_5_5.SetActive(false);
+        }
     }
-
 }

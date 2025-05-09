@@ -9,7 +9,7 @@ public static class Playerdata
     public static int step;//ход
     public static int stone_day;//камень
     public static int weapon_day;//оружие
-    public static int food_day = 800;//еда
+    public static int food_day = 1000;//еда
     public static int population_day;//население
     public static int up_stoimost_stone, up_stoimost_people, up_stoimost_food;
     //public static int minus_food
@@ -46,5 +46,9 @@ public static class Playerdata
     public static int koncovka;
     public static bool kocovka_bool = true;
     public static int random_controll_events;
+    public static int feigh = 20;
+    public static float govermentbonus = 0.5f;
+    public static bool angry_feigh;
+    public static int tourch;
 
 }

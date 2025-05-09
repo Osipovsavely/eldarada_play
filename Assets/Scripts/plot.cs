@@ -28,16 +28,22 @@ public class plot : MonoBehaviour
     {
         event_object_2.SetActive(false);
         Playerdata.main_person = 2;
+        Playerdata.govermentbonus = 1.2f;
+        Playerdata.feigh += 40;
     }
     public void event_2_yes()
     {
         event_object_2.SetActive(false);
         Playerdata.main_person = 0;
+        Playerdata.govermentbonus = 0.8f;
+        Playerdata.feigh += 40;
     }
     public void event_2_fiftififti()
     {
         event_object_2.SetActive(false);
         Playerdata.main_person = 1;
+        Playerdata.govermentbonus = 1.2f;
+        Playerdata.feigh += 40;
     }
 
 
