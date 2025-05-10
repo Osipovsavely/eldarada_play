@@ -11,7 +11,7 @@ public class s : MonoBehaviour
     [SerializeField] GameObject not_plot_event_1, not_plot_event_2, not_plot_event_3, massage_, end_1;
     [SerializeField] TMP_Text stoneHP_text, weaponHP_text, peopleHP_text, massage_text, massage_text_answe;
     int random_controll_batlle;
-    [SerializeField] GameObject feigh_1_5, feigh_2_5, feigh_3_5, feigh_4_5, feigh_5_5;
+    [SerializeField] GameObject feigh_1_5, feigh_2_5, feigh_3_5, feigh_4_5, feigh_5_5, education_image;
     //public Image feigh_1_5, feigh_2_5, feigh_3_5, feigh_4_5, feigh_5_5;
     float just_weapon_day;
     float just_food_day;
@@ -29,6 +29,8 @@ public class s : MonoBehaviour
 
     void Start()
     {
+        education_image.SetActive(Playerdata.education);
+        Playerdata.education = false;
         if (Playerdata.step >= 3)
         {
             portal.SetActive(true);
@@ -74,37 +76,31 @@ public class s : MonoBehaviour
             feigh_5_5.SetActive(false);
         }
     }
-    
 
     void Update()
     {
         
     }
+
     public void step()
     {
-       
-
         Playerdata.step += 1;
+        education_image.SetActive(false);
 
         if ((Playerdata.main_person == 1) && (Playerdata.main_person == 2) && (Playerdata.step == 4))
         {
-            just_food_day = ((Playerdata.food_day - Playerdata.population - (Playerdata.people_HP*2)))*Playerdata.govermentbonus*(1-(Playerdata.feigh));
-            just_weapon_day = Playerdata.weapon_day*Playerdata.govermentbonus*(1-(Playerdata.feigh));
-            just_stone_day = Playerdata.stone_day*Playerdata.govermentbonus*(1-(Playerdata.feigh));
-            just_people_day = Playerdata.population_day*Playerdata.govermentbonus*(1-(Playerdata.feigh));
+            just_food_day = ((Playerdata.food_day - Playerdata.population - (Playerdata.people_HP*2)));
+            just_weapon_day = Playerdata.weapon_day;
+            just_stone_day = Playerdata.stone_day;
+            just_people_day = Playerdata.population_day;
         }
         else
         {
-            just_food_day = (Playerdata.food_day - Playerdata.population - (Playerdata.people_HP*2))*Playerdata.govermentbonus*Playerdata.feigh;
-            just_weapon_day = Playerdata.weapon_day*Playerdata.govermentbonus*Playerdata.feigh;
-            just_stone_day = Playerdata.stone_day*Playerdata.govermentbonus*Playerdata.feigh;
-            just_people_day = Playerdata.population_day*Playerdata.govermentbonus*Playerdata.feigh;
+            just_food_day = (Playerdata.food_day - Playerdata.population - (Playerdata.people_HP*2));
+            just_weapon_day = Playerdata.weapon_day;
+            just_stone_day = Playerdata.stone_day;
+            just_people_day = Playerdata.population_day;
         }
-        
-        //float just_weapon_day = Playerdata.weapon_day*Playerdata.govermentbonus;
-        //float just_stone_day = Playerdata.stone_day;
-        //float just_people_day = Playerdata.population_day;
-        
         Playerdata.stone += Mathf.RoundToInt(just_stone_day);
         Playerdata.food += Mathf.RoundToInt(just_food_day);
         Playerdata.population += Mathf.RoundToInt(just_people_day);

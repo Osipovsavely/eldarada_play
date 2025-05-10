@@ -50,5 +50,9 @@ public static class Playerdata
     public static float govermentbonus = 0.5f;
     public static bool angry_feigh;
     public static int tourch;
+    public static bool tourch_controll;
+    public static bool education = true;
+    
+
 
 }

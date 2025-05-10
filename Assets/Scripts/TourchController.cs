@@ -7,8 +7,16 @@ public class TourchController : MonoBehaviour
     [SerializeField] GameObject tourch_object;
     public void OnMouseDown() 
     {
-        tourch_object.SetActive(true);
+        if(Playerdata.tourch_controll == true)
+        {
+            tourch_object.SetActive(true);
+            Playerdata.tourch_controll = false;
+        }
+        else 
+        {
+            Playerdata.tourch_controll = true;
+            tourch_object.SetActive(false);
+        }
     }
-
    
 }
