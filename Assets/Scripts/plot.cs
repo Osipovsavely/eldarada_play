@@ -10,14 +10,17 @@ public class plot : MonoBehaviour
     public void event_1_say_tue()
     {
         event_object_1.SetActive(false);
+        Playerdata.koncovka = 120;
     }
     public void event_1_say_false()
     {
         event_object_1.SetActive(false);
+        Playerdata.koncovka = 200;
     }
     public void event_1_no_say()
     {
         event_object_1.SetActive(false);
+        Playerdata.kocovka_bool = false;
     }
 
 
@@ -25,16 +28,22 @@ public class plot : MonoBehaviour
     {
         event_object_2.SetActive(false);
         Playerdata.main_person = 2;
+        Playerdata.govermentbonus = 1.2f;
+        Playerdata.feigh += 40;
     }
     public void event_2_yes()
     {
         event_object_2.SetActive(false);
         Playerdata.main_person = 0;
+        Playerdata.govermentbonus = 0.8f;
+        Playerdata.feigh += 40;
     }
     public void event_2_fiftififti()
     {
         event_object_2.SetActive(false);
         Playerdata.main_person = 1;
+        Playerdata.govermentbonus = 1.2f;
+        Playerdata.feigh += 40;
     }
 
 

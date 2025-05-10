@@ -20,6 +20,7 @@ public class UpdateController : MonoBehaviour
             //Debug.Log(Mathf.Round(up_ogran_population));
             Playerdata.population_day += 15;
             Playerdata.food_day -= 15;
+            Playerdata.feigh -= 1;
 
         }
         
@@ -32,6 +33,7 @@ public class UpdateController : MonoBehaviour
             //up_ogran_population = up_ogran_population * 1.1f;
             //Debug.Log(Mathf.Round(up_ogran_population));
             Playerdata.stone_day += 10;
+            Playerdata.feigh -= 1;
         }
 
         if ((Playerdata.rescon == 2) && (Playerdata.stone >= Playerdata.up_stoimost_stone) && (Playerdata.food >= Playerdata.up_stoimost_food) && (Playerdata.population >= Playerdata.up_stoimost_people))
@@ -43,6 +45,7 @@ public class UpdateController : MonoBehaviour
             //up_ogran_population = up_ogran_population * 1.1f;
             //Debug.Log(Mathf.Round(up_ogran_population));
             Playerdata.food_day += 100;
+            Playerdata.feigh -= 1;
         }
 
         if ((Playerdata.rescon == 3) && (Playerdata.stone >= Playerdata.up_stoimost_stone) && (Playerdata.food >= Playerdata.up_stoimost_food) && (Playerdata.population >= Playerdata.up_stoimost_people))
@@ -54,7 +57,10 @@ public class UpdateController : MonoBehaviour
             //up_ogran_population = up_ogran_population * 1.1f;
             //Debug.Log(Mathf.Round(up_ogran_population));
             Playerdata.weapon_day += 10;
+            Playerdata.feigh -= 1;
         }
+
+        
     }
 }
    

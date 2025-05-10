@@ -21,6 +21,7 @@ public class melnicaController : MonoBehaviour
         Playerdata.up_stoimost_stone = 200;
         Playerdata.up_stoimost_people = 10;
         Playerdata.up_stoimost_food = 20;
+        Playerdata.food_day -= 20;
         stoimost_stone.text = Playerdata.up_stoimost_stone.ToString();
         stoimost_people.text = Playerdata.up_stoimost_people.ToString();
         stoimost_food.text = Playerdata.up_stoimost_food.ToString();

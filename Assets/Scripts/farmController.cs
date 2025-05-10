@@ -10,7 +10,7 @@ public class farmController : MonoBehaviour
     [SerializeField] TMP_Text in_day_text;
     [SerializeField] TMP_Text stoimost_stone, stoimost_food, stoimost_people;
     [SerializeField] GameObject panel;
-    int real_people_in_day = (Playerdata.up_stoimost_food - Playerdata.people_HP);
+    int real_people_in_day = (Playerdata.food_day - Playerdata.population - (Playerdata.people_HP*2));
     // Start is called before the first frame update
     public void OnMouseDown() 
     { 
